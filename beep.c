@@ -29,7 +29,7 @@ void beep(unsigned int note, unsigned int duration){
 
   //Add a little delay to separate the single notes
   digitalWrite(BeepPin, LOW);
-  delay(20);
+  delay(5);
 }
 
 void play()
@@ -40,12 +40,12 @@ void play()
     for (;;)
     {
         progress += step;
-        freq = abs(1000 * sin(progress));
+        freq = 600 + abs(400 * sin(progress));
         if (freq == 0)
         {
             continue;
         }
-        beep(freq, 50);
+        beep(freq, 10);
     }
 }
 
